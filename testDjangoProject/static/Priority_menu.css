@@ -390,7 +390,7 @@ footer div {
     justify-content: space-between;
 }
 
-.sex{
+.slide{
     overflow: hidden;
     max-width: 80%;
     box-sizing: border-box;
@@ -399,4 +399,9 @@ footer div {
 .arrow-img{
     height: auto;
     width: 7%;
+}
+
+.card a{
+    text-decoration: none;
+    color:black;
 }
