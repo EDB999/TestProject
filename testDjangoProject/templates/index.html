@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Magical Mein</title>
+
+    <link rel="StyleSheet" href="{% static 'Priority.css'%}"/>
+
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="{% static 'JSS/PartnersScriptURL.js' %}" language="JavaScript"> </script>
+
+    <script src="{% static 'JSS/modal.js' %}"></script>
+
+    <style type="text/css"></style>
+
+  </head>
+  <body>
+
+    <div class="header">
+      <img src="{% static 'images/magical_top.png' %}" alt="logo" class="logo" />
+      <div class="container">
+        <a
+          href="{% url 'index' %}"
+        >
+          Главная
+        </a>
+        <a
+          href="{% url 'menu' %}"
+        >
+          Меню
+        </a>
+        <a
+          href="{% url 'payment_and_delivery_page' %}"
+        >
+          Доставка и оплата</a
+        >
+        <a
+          href="{% url 'contacts' %}"
+        >
+          Контакты</a
+        >
+      </div>
+      <a class="phone"
+      href="tel:+79802447155">
+        +79802447155
+        <span>
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAqVJREFUSEu1lcuLjmEYxn9XKXJKMc5KTA3ZyIzTwsw4xIZy2BALhxWSlPgD2KAsSBbExnFBk1gh51OYWVAmxvlYpCzk3K1rer7p/d75vmlmap56N/f7PPf13Nd1X/cjeniph/PTLYCI+AbcAu4CFyXdKXfRdgARMRw4D/wFFkv6lD8cEZGLnQU2SfqQ31sEEBEVwA2gKm18CtTlQSKiPzAFqAa2A8OAH8AaSaezIG0AKfk1YCLwGvAtxwIlQQpJImIQsB9YBfzyeUkvC/+zAOeARSl5PfAHMOB44BlQW6gkafAGaAB2SPodEceAlcB1oF5SK41ZAJfYB6iU9Nw/kx5XgAlAkyTT4nhWg0ZgOjAAeJLomibpfh7gLTDan6T3JQAeSJqa4kOABcAeYIR1kLQ7InYB24DNkvblAdxqM4CZktx+vmkTMBl4BMyV9DkrYEQsB06aFkl1EbEUOAOckrQiD3AA2JBFjwhXMhKYLelqiXZ1JQb9IqkiIkYB76yjJDdIkQYW2EJfljQvVbAX2AIclbS2O67PitwPsEMdq5LUEhE1gMWyqNWSTFmXVt5oh4F1WQ4j4gRgPu2NZZIepuoGAxeAXsDCUo4voigdMt8vgN7AEkkNEeHK7gGTgH/AQcB6HU9u9tGW5JOPHY6KBOLW2wp8B2okNUdE35R0dS6BHWsWLGiRGds5OWN9J7MbPWdMi8t/nMBrPW8cA74Cc9K5guPbVVJyXEeE289Dzw7+CWyUdKScujnHN0ry5VpX2fcgIgYCni9uX6+bwPpCNTnDeQoXBmXnADKUWY+dSXiHbye3GtDz3+/GpdQEpmhWtqM69aJFxBjgUJo/5Zh6lZLbyW2rUwCZaioTyHxgHDAUsF7NjksqSt6hBl2yawebu1RBd0D/AyVyDCj0XQWvAAAAAElFTkSuQmCC" /></span
+      ></a>
+    </div>
+
+    <div class="button">
+      <a
+        href="{% url 'index' %}"
+        >Главная
+      </a>
+    </div>
+
+    <div class="info">
+      <h1>
+        Добро пожаловать в <br />
+        наш ресторан!
+      </h1>
+      <p class="descryption">
+        Наш ресторан – это место, где воплощаются самые изысканные кулинарные
+        фантазии и где каждое блюдо – настоящее произведение искусства. Мы
+        гордимся своим меню, в котором представлены лучшие блюда из разных
+        кухонь мира, созданные нашими талантливыми шеф-поварами.
+      </p>
+    </div>
+
+    <section class="booking">
+
+      <div class="title-book">
+        ЗАБРОНИРОВАТЬ СТОЛ В СВОЕМ ЛЮБИМОМ РЕСТОРАНЕ
+      </div>
+
+       <a id="btn-book" class="btn-book"> ЗАБРОНИРОВАТЬ СТОЛ</a>
+
+    </section>
+
+    <section id="myModal" class="modal">
+        <div class="modal-content">
+
+          <span class="close">
+            &times;
+
+          </span>
+
+          <div class="modal-header">
+            ЗАБРОНИРОВАТЬ СТОЛ В СВОЕМ ЛЮБИМОМ РЕСТОРАНЕ
+          </div>
+
+          <form class="" method="post" action="{% url 'index' %}">
+
+            <div class="modal-body" >
+
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            </div>
+
+            <div class="modal-footer ">
+              <button type="submit" class="modal-btn"> ЗАБРОНИРОВАТЬ </button>
+            </div>
+
+          </form>
+
+        </div>
+    </section>
+
+    <div class="row">
+      <div class="card">
+        <h2 class="cool">Волшебная атмосфера</h2>
+        <p>
+          С самого момента, как переступите порог, вас окружит чарующая магия,
+          витающая в воздухе, и вас охватит ощущение, словно вам открылась дверь
+          в сказочный мир. Уютное освещение, нежные оттенки и таинственный свет,
+          проникающий сквозь густой зеленый лиственный завес, создают атмосферу
+          загадочности и очарования. Изящные столовые приборы, подсвечники и
+          свежие цветы на столах дополняют картину, словно вас окружает
+          волшебный сад, полный чудес и секретов.
+        </p>
+      </div>
+      <div class="card">
+        <h2 class="cool">Великолепные блюда</h2>
+        <p>
+          Когда подносят меню, словно открывается сокровищница изысканных блюд и
+          напитков. Каждое блюдо наделено волшебством свежих продуктов, тонко
+          подобранной специй и уникальным сочетанием ингредиентов. Разнообразие
+          кулинарных шедевров предлагает вам попробовать новые вкусы и
+          насладиться превосходством каждого блюда. Осознание того, что каждая
+          минута в ресторане, каждая порция блюда или бокал вина великолепны по
+          своему уникальному сплетению вкусов и эмоций, создает особое
+          взаимодействие с гостями ресторана.
+        </p>
+      </div>
+      <div class="card">
+        <h2 class="cool">Чарующие цены</h2>
+        <p>
+          Здесь царит радость открытий и уникального опыта, а стоимость каждого
+          блюда пропорциональна его неземному вкусу и качеству. Хотя цены
+          поначалу могут показаться немного выше обычных, каждый кусочек
+          продукта, каждый вздох волшебной атмосферы стоит этой цены. В
+          благодарность за уделенное внимание к вашей кулинарной радости и
+          удовлетворению вкусовых ощущений, ресторан уделяет заботу каждому
+          гостю, чтобы вам хотелось возвращаться снова и снова.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <div>
+        <h2>Наши партнёры:</h2>
+        <img id="cola" src="{% static 'images/cola.png' %}" alt="cola" onclick="colaClick(event)" onmouseover="onMouseOver()" onmouseout="onMouseOut()"/>
+        <img id="yandex" src="{% static 'images/yandex.png' %}" alt="yandex" onclick="yandexClick(event)" onmouseover="onMouseOver()" onmouseout="onMouseOut()"/>
+        <img id="vk" src="{% static 'images/vk.png' %}" alt="vk" onclick="vkClick(event)" onmouseover="onMouseOver()" onmouseout="onMouseOut()"/>
+        <img id="warner" src="{% static 'images/warner.png' %}" alt="warner" onclick="warnerBrosClick(event)" onmouseover="onMouseOver()" onmouseout="onMouseOut()" />
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Magical Payment</title>
+    <link rel="StyleSheet" href="{% static 'Priority_Paymend_and_Delivery.css'%}"/>
+
+
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="{% static 'JSS/PartnersScriptURL.js' %}" language="JavaScript"> </script>
+
+
+
+    <style type="text/css"></style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="{% static 'images/magical_top.png' %}" alt="logo" class="logo" />
+      <div class="container">
+        <a
+           href="{% url 'index' %}"
+        >
+          Главная
+        </a>
+        <a
+          href="{% url 'menu' %}"
+        >
+          Меню
+        </a>
+        <a
+          href="{% url 'payment_and_delivery_page' %}"
+        >
+          Доставка и оплата</a
+        >
+        <a
+          href="{% url 'contacts' %}"
+        >
+          Контакты</a
+        >
+      </div>
+      <a class="phone">
+        +79802447155
+        <span>
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAqVJREFUSEu1lcuLjmEYxn9XKXJKMc5KTA3ZyIzTwsw4xIZy2BALhxWSlPgD2KAsSBbExnFBk1gh51OYWVAmxvlYpCzk3K1rer7p/d75vmlmap56N/f7PPf13Nd1X/cjeniph/PTLYCI+AbcAu4CFyXdKXfRdgARMRw4D/wFFkv6lD8cEZGLnQU2SfqQ31sEEBEVwA2gKm18CtTlQSKiPzAFqAa2A8OAH8AaSaezIG0AKfk1YCLwGvAtxwIlQQpJImIQsB9YBfzyeUkvC/+zAOeARSl5PfAHMOB44BlQW6gkafAGaAB2SPodEceAlcB1oF5SK41ZAJfYB6iU9Nw/kx5XgAlAkyTT4nhWg0ZgOjAAeJLomibpfh7gLTDan6T3JQAeSJqa4kOABcAeYIR1kLQ7InYB24DNkvblAdxqM4CZktx+vmkTMBl4BMyV9DkrYEQsB06aFkl1EbEUOAOckrQiD3AA2JBFjwhXMhKYLelqiXZ1JQb9IqkiIkYB76yjJDdIkQYW2EJfljQvVbAX2AIclbS2O67PitwPsEMdq5LUEhE1gMWyqNWSTFmXVt5oh4F1WQ4j4gRgPu2NZZIepuoGAxeAXsDCUo4voigdMt8vgN7AEkkNEeHK7gGTgH/AQcB6HU9u9tGW5JOPHY6KBOLW2wp8B2okNUdE35R0dS6BHWsWLGiRGds5OWN9J7MbPWdMi8t/nMBrPW8cA74Cc9K5guPbVVJyXEeE289Dzw7+CWyUdKScujnHN0ry5VpX2fcgIgYCni9uX6+bwPpCNTnDeQoXBmXnADKUWY+dSXiHbye3GtDz3+/GpdQEpmhWtqM69aJFxBjgUJo/5Zh6lZLbyW2rUwCZaioTyHxgHDAUsF7NjksqSt6hBl2yawebu1RBd0D/AyVyDCj0XQWvAAAAAElFTkSuQmCC" /></span
+      ></a>
+    </div>
+    <div class="button">
+      <a
+        href="{% url 'index' %}"
+        >Главная</a
+      >
+      <span>/ Доставка и оплата</span>
+    </div>
+    <div>
+      <h1>Удобнейшие способы доставки и оплаты</h1>
+    </div>
+
+    <div class="row">
+
+      <div class="card1">
+        <div class="t1">Ваш заказ</div>
+        {% for item in payment_and_delivery_items %}
+       <div class="row2">
+            <div>
+                 <img src="{% static item.meal.preview_picture %}" alt=""/>
+            </div>
+            <div class="name">{{ item.meal.name }}</div>
+              <a href="{% url 'remove_from_payment_and_delivery' item.meal.pk %}?action=decrease">
+                -
+              </a>
+            <div>{{ item.quantity }}</div>
+            <a href="{% url 'add_to_payment_and_delivery' item.meal.pk %}">
+              +
+            </a>
+            <div class="money">{{ item.meal.price }} р</div>
+          </div>
+          <div class="centered-bar"></div>
+
+        {% empty %}
+        <p>Ваша корзина пуста</p>
+        {% endfor %}
+
+        <a> Очистить корзину </a>
+      </div>
+
+      <div class="card">
+
+        <div class="t1">Адрес доставки</div>
+        <div class="btn-container">
+          <button>Доставка <br />560 p</button>
+        </div>
+
+         <form class="" method="post" action="{% url 'payment_and_delivery_page' %}">
+           {% csrf_token %}
+        <div class="textbox-container">
+          <input type="text" id="street_house" class="textbox" name="street_house" placeholder="Улица, дом" />
+          <input type="text" id="flat_office" class="textbox" name="flat_office" placeholder="Кв./офис" />
+          <input type="text" id="intercom"  class="textbox" name="intercom" placeholder="Домофон" />
+          <input type="text" id="entrance"  class="textbox" name="entrance" placeholder="Подъезд" />
+          <input type="text" id="floor"  class="textbox" name="floor" placeholder="Этаж" />
+        </div>
+
+        <div class="t1">Время доставки</div>
+        <div class="t2">Время доставки: 75-85 мин</div>
+        <div class="t1">Итого: <small>{{ total_price }} р</small></div>
+
+        <button type="submit" class="modal-btn"> ЗАБРОНИРОВАТЬ </button>
+
+      </form>
+      </div>
+    </div>
+
+    <footer>
+      <div>
+        <h2>Наши партнёры:</h2>
+        <img id="cola" src="{% static 'images/cola.png' %}" alt="cola" onclick="colaClick(event)" onmouseover="onMouseOver()" onmouseout="onMouseOut()"/>
+        <img id="yandex" src="{% static 'images/yandex.png' %}" alt="yandex" onclick="yandexClick(event)" onmouseover="onMouseOver()" onmouseout="onMouseOut()"/>
+        <img id="vk" src="{% static 'images/vk.png' %}" alt="vk" onclick="vkClick(event)" onmouseover="onMouseOver()" onmouseout="onMouseOut()"/>
+        <img id="warner" src="{% static 'images/warner.png' %}" alt="warner" onclick="warnerBrosClick(event)" onmouseover="onMouseOver()" onmouseout="onMouseOut()" />
+      </div>
+    </footer>
+  </body>
+</html>

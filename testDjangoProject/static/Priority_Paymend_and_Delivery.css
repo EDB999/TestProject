@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Nova+Square&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nova square", sans-serif;
+}
+
+body {
+  margin: 0;
+  background-image: url("Images/new2.jpg");
+  line-height: 1.6;
+  max-height: 100 vh;
+  max-width: 100%;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1px 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 85px;
+}
+.phone {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.container a {
+  padding: 10px 30px;
+  font-weight: 700;
+  font-size: 18px;
+  border: 2px solid white;
+  border-radius: 14px;
+  margin: 0px 10px;
+  color: white;
+  text-decoration: none;
+}
+.container a:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+.container h1 {
+  font-size: 48 px;
+  color: white;
+  font-weight: 800;
+}
+.logo {
+  margin: 0px;
+  width: 200px;
+}
+
+.phone:after {
+  background-color: white;
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0%;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz--transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+.phone:hover:after,
+.phone:focus:after {
+  width: 100%;
+}
+
+.button a {
+  text-decoration: none;
+  color: white;
+  margin-left: 240px;
+  padding: 5px;
+  font-style: bold;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.button a:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button span {
+  color: rgba(255, 255, 255, 0.788);
+}
+
+body h1 {
+  max-width: 100%;
+  margin-inline: auto;
+  color: white;
+  font-size: 50px;
+  max-height: auto;
+  margin-top: 0px;
+  text-align: center;
+  font-weight: bolder;
+  padding: 20px;
+  border-bottom: 4px solid white;
+  width: 700px;
+  margin-bottom: 250px;
+}
+
+.card {
+  background-color: white;
+  width: 450px;
+  height: 500px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  margin: 0.5rem;
+  margin-bottom: 400px;
+  color: black;
+  flex-direction: column;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.card1 {
+  background-color: white;
+  width: 30%;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 30px;
+  padding-bottom: 20px;
+  margin: 0.5rem;
+  color: black;
+  flex-direction: column;
+  display: flex;
+}
+
+.card1 a {
+  text-align: center;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 50%;
+  margin: auto;
+  font-weight: bolder;
+}
+
+.card1 a:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.t1 {
+  width: 100%;
+  text-align: left;
+  font-size: 26px;
+  padding-left: 30px;
+  padding-top: 25px;
+  font-weight: bolder;
+}
+.t2 {
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  padding-left: 30px;
+}
+
+.textbox {
+  margin: 5px;
+  width: 110px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.textbox:hover {
+  border-color: #555;
+}
+
+.textbox:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.textbox-container {
+  padding-left: 25px;
+}
+
+.card button {
+  background-color: white;
+  color: black;
+  border: 0px;
+  border-radius: 8px;
+  margin: auto;
+  font-weight: bolder;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 300;
+  padding: 5px 10px 5px 10px;
+  direction: ltr;
+}
+
+.card button:hover {
+  background-color: black;
+  color: white;
+}
+.btn-container {
+  width: 100%;
+  text-align: left;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+.price-container {
+  color: black;
+  display: flex;
+}
+
+.row2 a {
+  background-color: rgba(255, 255, 255, 0.788);
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.row2 img {
+  border: 2px solid black;
+  margin: 10px;
+  width: 160px;
+  height: 120px;
+  border-radius: 10px;
+}
+
+.name {
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.name1 {
+  margin-left: 10px;
+  margin-right: 25px;
+}
+
+.name2 {
+  margin-left: 10px;
+  margin-right: 8px;
+}
+.name3 {
+  margin-left: 10px;
+  margin-right: 55px;
+}
+
+.money {
+align-items: center;
+    width: 20%;
+  margin-left: 10px;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.btn-swap {
+  text-align: center;
+  background-color: transparent;
+  border: 0px solid;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.btn-swap box-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.card a {
+  text-align: center;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 50%;
+  margin: auto;
+  font-weight: bolder;
+}
+.card a:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.card img {
+  margin: 10px;
+  width: 480px;
+  height: 360px;
+  border-radius: 10px;
+}
+
+.row {
+  height: auto;
+  margin-top: 0px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: start;
+  align-content: start;
+  justify-content: space-evenly;
+}
+
+.row2 {
+  font-size: 16px;
+  width: 500px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+  align-items: center;
+  align-content: center;
+}
+
+.centered-bar {
+  width: 90%;
+  height: 1px;
+  background-color: black;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+body h2 {
+  color: white;
+  max-height: 100vh;
+  text-align: center;
+}
+footer {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  max-width: 100%;
+  color: white;
+  margin-top: 300px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  right: 0;
+  padding: 5px 30px;
+}
+
+footer img {
+  width: 100px;
+}
+
+#yandex {
+  margin-top: 30px;
+  height: 125px;
+  width: 120px;
+}
+#vk {
+  height: 65px;
+  width: 65px;
+  margin-bottom: 15px;
+}
+#warner {
+  height: 105px;
+}
+
+footer div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+body a{
+    text-decoration: none;
+    color: black;
+}

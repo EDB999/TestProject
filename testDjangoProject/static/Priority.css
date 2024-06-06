@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Nova+Square&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nova square", sans-serif;
+}
+body {
+  margin: 0;
+  background-image: url("Images/new2.jpg");
+  line-height: 1.6;
+  max-height: 100 vh;
+  max-width: 100%;
+  background-attachment: scroll;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1px 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 85px;
+}
+.phone {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.container a {
+  padding: 10px 30px;
+  font-weight: 700;
+  font-size: 18px;
+  border: 2px solid white;
+  border-radius: 14px;
+  margin: 0px 10px;
+  color: white;
+  text-decoration: none;
+}
+.container a:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+.container h1 {
+  font-size: 48 px;
+  color: white;
+  font-weight: 800;
+}
+.logo {
+  margin: 0px;
+  width: 200px;
+}
+
+.phone:after {
+  background-color: white;
+  display: block;
+  content: "";
+  height: 2px;
+  width: 0%;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz--transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+.phone:hover:after,
+.phone:focus:after {
+  width: 100%;
+}
+.button a {
+  text-decoration: none;
+  color: white;
+  margin-left: 240px;
+  padding: 5px;
+  font-style: bold;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.button a:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.info {
+  max-width: 60%;
+  margin-inline: auto;
+  color: white;
+  font-size: 30px;
+  max-height: 100vh;
+  margin-top: 120px;
+  text-align: center;
+  font-style: italic;
+  padding: 20px;
+}
+.descryption {
+  font-size: 27px;
+  margin-bottom: 30px;
+}
+.info a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px 30px;
+  font-weight: 700;
+  font-size: 30px;
+  border: 2px solid white;
+  border-radius: 15px;
+  margin: 0px 10px;
+  color: white;
+  font-style: normal;
+}
+.info a:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+.card {
+  width: 370px;
+  height: 433px;
+  flex-shrink: 0;
+  border: 2px solid white;
+  border-radius: 16px;
+  background: transparent;
+  margin: 0.5rem;
+  color: white;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: 0.4s;
+  transform: scale(1.1);
+}
+.row {
+  margin-top: 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.booking {
+  background-color: white;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.title-book {
+  width: 700px;
+  text-align: left;
+  font-size: 36px;
+  font-weight: bolder;
+}
+
+.title-modal-book{
+  width: 700px;
+  text-align: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bolder;
+}
+
+.form-pad{
+    padding-top: 15px;
+}
+
+.book-modal-body{
+    margin-top: 30px;
+}
+
+.btn-book {
+  text-align: center;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: auto;
+  padding: 10px;
+  margin-left: 600px;
+  font-weight: bolder;
+}
+
+.btn-book:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  max-width: 100%;
+  color: white;
+  margin-top: 50px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  right: 0;
+  padding: 5px 30px;
+}
+
+footer img {
+  width: 100px;
+}
+
+#yandex {
+  margin-top: 30px;
+  height: 125px;
+  width: 120px;
+}
+#vk {
+  height: 65px;
+  width: 65px;
+  margin-bottom: 15px;
+}
+#warner {
+  height: 105px;
+}
+
+footer div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    height: 53%;
+    box-shadow: 0px 0px 10px #000;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+.modal-header {
+    color: black;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 0px 35px 20px 35px;
+    margin-bottom: 20px;
+    width: 500px;
+    text-align: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bolder;
+    border-bottom: 1px solid #eee;
+  }
+
+.modal-body {
+    padding-bottom: 20px;
+  }
+
+.modal-footer {
+    border-top: 1px solid #eee;
+  }
+
+.modal-btn {
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    font-weight: bolder;
+}
+
+.modal-btn:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+.modal-header h2,
+.modal-footer h3 {
+    margin: 0;
+  }
+
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
