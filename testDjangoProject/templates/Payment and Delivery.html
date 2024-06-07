@@ -4,14 +4,14 @@
   <head>
     <meta charset="UTF-8" />
     <title>Magical Payment</title>
-    <link rel="StyleSheet" href="{% static 'Priority_Paymend_and_Delivery.css'%}"/>
+    <link rel="StyleSheet" href="{% static 'Styles/Priority_Paymend_and_Delivery.css'%}"/>
 
 
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="{% static 'JSS/PartnersScriptURL.js' %}" language="JavaScript"> </script>
 
-
+    <script src="{% static 'JSS/order.js' %}" language="JavaScript"> </script>
 
     <style type="text/css"></style>
   </head>
@@ -83,7 +83,7 @@
         <p>Ваша корзина пуста</p>
         {% endfor %}
 
-        <a> Очистить корзину </a>
+<!--        <a> Очистить корзину </a>-->
       </div>
 
       <div class="card">
@@ -107,7 +107,7 @@
         <div class="t2">Время доставки: 75-85 мин</div>
         <div class="t1">Итого: <small>{{ total_price }} р</small></div>
 
-        <button type="submit" class="modal-btn"> ЗАБРОНИРОВАТЬ </button>
+        <button id="button-order" type="submit" @click="alertWaiting"> Заказать доставку </button>
 
       </form>
       </div>

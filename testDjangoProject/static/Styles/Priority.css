@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Nova+Square&display=swap");
+
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +10,7 @@
 }
 body {
   margin: 0;
-  background-image: url("Images/new2.jpg");
+  background-image: url('new2.jpg');
   line-height: 1.6;
   max-height: 100 vh;
   max-width: 100%;

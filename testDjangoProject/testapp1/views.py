@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
-
+from django.core.cache import cache
+from django.contrib.sessions.models import Session
 from testapp1.forms import BookingForm
 from testapp1.models import MealMachine, OrderMachine
 
@@ -9,6 +10,7 @@ from testapp1.models import MealMachine, OrderMachine
 
 def index_page(request):
     form = BookingForm(request.POST)
+
     if request.method == 'POST':
         if form.is_valid():
             form.save()
@@ -25,14 +27,7 @@ def menu_page(request):
         else:
             form = BookingForm()
     meals = MealMachine.objects.all()
-    # for meal in meals:
-    #     meal.preview_picture = meal.preview_picture.replace(
-    #         'C:\\Users\\User\\Desktop\\mealsTP\\project\\meals\\main\\static\\', '')
     return render(request, 'menu.html', {'form': form, 'meals': meals})
-
-
-# def payment_and_delivery_page(request):
-#     return render(request, 'Payment and Delivery.html')
 
 
 def contacts_page(request):
@@ -105,9 +100,18 @@ def payment_and_delivery(request):
 
         order.content.set(meals)
         order.save()
+        Session.objects.all().delete()
+        total_price = 0
+        payment_and_delivery_items.clear()
+        total_items = 0
 
     return render(request, 'Payment and Delivery.html', {
         'payment_and_delivery_items': payment_and_delivery_items,
         'total_price': total_price,
         'total_items': total_items,
     })
+
+
+def clear_cart(request):
+    request.session['payment_and_delivery_items'] = []
+    return redirect('your_cart_view_name')

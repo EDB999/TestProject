@@ -10,6 +10,10 @@ const { createApp } = Vue;
             },
             scrollRight() {
                 this.slider.scrollBy({ left: this.slider.clientWidth, behavior: 'smooth' });
+            },
+            alertWaiting(){
+                alert("hui");
             }
         }
+
     }).mount('#app');

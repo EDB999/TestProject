@@ -9,7 +9,7 @@
 
 body {
   margin: 0;
-  background-image: url("Images/new2.jpg");
+  background-image: url('new2.jpg');
   line-height: 1.6;
   max-height: 100 vh;
   max-width: 100%;
@@ -196,12 +196,12 @@ body h1 {
   color: black;
   border: 0px;
   border-radius: 8px;
-  margin: auto;
+  padding: 5px;
   font-weight: bolder;
-  font-size: 16px;
+  font-size: 26px;
   font-family: sans-serif;
   font-weight: 300;
-  padding: 5px 10px 5px 10px;
+  align-items:center;
   direction: ltr;
 }
 
